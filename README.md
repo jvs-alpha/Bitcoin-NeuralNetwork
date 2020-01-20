@@ -1,6 +1,7 @@
 # Bitcoin-NeuralNetwork
 
 ## TODO
+* __Find the meaning of the values in the example program__
 * Understand how to create a neuralnetwork for analysing values
 * Make the system modular so it can be improved in the future
 * Make the project properly so it is actually useful
@@ -10,4 +11,4 @@
 * Decide the variables that are going to be used to train
 * Decide the output prediction varable of the NeuralNetwork
 * Normalize the Data
-* Run the NeuralNetwork to train the system 
+* Run the NeuralNetwork to train the system
