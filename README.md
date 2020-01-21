@@ -13,3 +13,6 @@
 * Decide the output prediction varable of the NeuralNetwork
 * Normalize the Data
 * Run the NeuralNetwork to train the system
+
+## Types of functions available for steps
+* Activation Function - softmax,rectified_linear_unit,tanh,sigmoid
