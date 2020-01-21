@@ -33,3 +33,12 @@ model.fit(train_images,train_lables,epochs=5)
 # This is for testing the dataset
 test_loss, test_acc = model.evaluate(test_images,test_lables)
 print("Tested Acc:",test_acc)
+
+prediction = model.predict(test_images) # It takes input as a list
+
+for i in range(5):
+    plt.grid(False)
+    plt.imshow(test_images[i],cmap=plt.cm.binary)
+    plt.xlabel("Actual: " + class_names[test_lables[i]])
+    plt.title("Prediction " + class_names[np.argmax(prediction[i])])
+    plt.show()

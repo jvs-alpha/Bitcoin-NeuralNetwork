@@ -15,4 +15,6 @@
 * Run the NeuralNetwork to train the system
 
 ## Types of functions available for steps
+* Propagation Function -
 * Activation Function - softmax,rectified_linear_unit,tanh,sigmoid
+* Output Function -
