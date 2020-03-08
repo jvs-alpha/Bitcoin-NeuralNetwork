@@ -1,2 +1,2 @@
-PIKey = "ByjOExMDgqki7d48gSPdRjqT3a79RrcoETbn9grSjXRKfCdX0uA5KmJEmGBReps2"
+APIKey = "ByjOExMDgqki7d48gSPdRjqT3a79RrcoETbn9grSjXRKfCdX0uA5KmJEmGBReps2"
 SecretKey = "fVknEZekB2phsEajTGPXuRh00J2NCU504yvN8HXG0lEmDRncGS3kK16qfP3krzfD"

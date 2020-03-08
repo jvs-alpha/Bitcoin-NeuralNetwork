@@ -1,6 +1,7 @@
 from keys import *
 import datetime
 from binance.client import Client
+import matplotlib.pyplot as plt
 import pandas as pd
 client = Client(APIKey,SecretKey)
 symbol = "BTCUSDT"
@@ -10,3 +11,4 @@ BTC["Open time"] = pd.to_datetime(BTC["Open time"],unit="ms")
 BTC.set_index("Open time",inplace=True)
 BTC["Close"] = BTC["Close"].astype(float)
 BTC["Close"].plot(figsize=(20,10),title="1 year")
+plt.show()
