@@ -42,13 +42,13 @@ model.add(LSTM(256))
 model.add(Dense(1))
 model.compile(loss="mean_squared_error",optimizer="adam")
 
-# Training the model
+# Training the model and prediction
 model.fit(x_train,y_train,epochs=100,batch_size=16,shuffle=False)
 predicted_price = model.predict(x_test)
 predicted_price = scaler.inverse_transform(predicted_price)
 real_price = scaler.inverse_transform(y_test)
 
-# To display the predicted values
+# To display the predicted value
 plt.figure(figsize=(20,8))
 plt.plot(predicted_price,color="red",label="predicted price")
 plt.plot(real_price,color="blue",label="Real Price")
