@@ -42,7 +42,7 @@ model.add(Dense(1))
 model.compile(loss="mean_squared_error",optimizer="adam")
 model.fit(x_train,y_train,epochs=50,batch_size=16,shuffle=False)
 predicted_price = model.predict(x_test)
-predicted_price = scaler.inverse_transform(y_test)
+predicted_price = scaler.inverse_transform(predicted_price)
 real_price = scaler.inverse_transform(y_test)
 print(predicted_price)
 
