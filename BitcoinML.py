@@ -21,10 +21,12 @@ data = BTC.iloc[:,3:4].astype("float").values
 scaler = MinMaxScaler()
 data = scaler.fit_transform(data)
 training_set = data[:10000]
-test_set = data[10000:]
+test_set = data[10000:11000]
 
-x_train = training_set[0:len(training_set)-1]
-y_train = training_set[1:len(training_set)]
+x_train = training_set[0:len(training_set)-1]   # The value that is used in prediction
+y_train = training_set[1:len(training_set)]     # The reference value that is used
+# We can see that the y_train is shifted one value from the start to the end
+# which means the NN will reain use the x_train as the input and the y_train as the ideal output
 
 x_test = test_set[0:len(test_set)-1]
 y_test = test_set[1:len(test_set)]
@@ -45,17 +47,17 @@ real_price = scaler.inverse_transform(y_test)
 print(predicted_price)
 
 plt.figure(figsize=(20,8))
-#plt.plot(predicted_price,color="red",label="predicted price")
+plt.plot(predicted_price,color="red",label="predicted price")
 plt.plot(real_price,color="blue",label="Real Price")
 plt.title("prediction vs Real")
 plt.xlabel("time")
 plt.ylabel("price")
 plt.show()
 
-plt.figure(figsize=(20,8))
-plt.plot(predicted_price,color="red",label="predicted price")
-#plt.plot(real_price,color="blue",label="Real Price")
-plt.title("prediction vs Real")
-plt.xlabel("time")
-plt.ylabel("price")
-plt.show()
+# plt.figure(figsize=(20,8))
+# plt.plot(predicted_price,color="red",label="predicted price")
+# #plt.plot(real_price,color="blue",label="Real Price")
+# plt.title("prediction vs Real")
+# plt.xlabel("time")
+# plt.ylabel("price")
+# plt.show()

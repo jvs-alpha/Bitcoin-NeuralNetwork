@@ -16,4 +16,5 @@ BTC["Close"] = BTC["Close"].astype("float")
 data = BTC.iloc[:,[3]].astype("float").values
 scaler = MinMaxScaler()
 data = scaler.fit_transform(data)
-print(data)
+training_set = data[0:len(data)-1]
+print(len(training_set))
