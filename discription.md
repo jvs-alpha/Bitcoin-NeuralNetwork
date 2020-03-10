@@ -1,4 +1,4 @@
-# Bitcoin Colseing price prediction using RNN (Long-Short-Term-Memory)
+# Bitcoin Closeing price prediction using RNN (Long-Short-Term-Memory)
 
 ## Modules Used
 

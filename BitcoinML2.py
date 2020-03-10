@@ -50,9 +50,9 @@ real_price = scaler.inverse_transform(y_test)
 
 # To display the predicted value
 plt.figure(figsize=(20,8))
-plt.plot(predicted_price,color="red",label="predicted price")
+plt.plot(predicted_price,color="red",label="Predicted price")
 plt.plot(real_price,color="blue",label="Real Price")
-plt.title("prediction vs Real")
+plt.title("Prediction vs Real from 2019-10-10 09:30:00 to 2020-02-15 17:30:00")
 plt.xlabel("time")
 plt.ylabel("price")
 plt.show()
