@@ -48,6 +48,9 @@ predicted_price = model.predict(x_test)
 predicted_price = scaler.inverse_transform(predicted_price)
 real_price = scaler.inverse_transform(y_test)
 
+# Save the model
+model.save("BTCPP.h5")
+
 # To display the predicted value
 plt.figure(figsize=(20,8))
 plt.plot(predicted_price,color="red",label="Predicted price")
