@@ -23,6 +23,15 @@ predicted_price = model.predict(data1)
 predicted_price = scaler.inverse_transform(predicted_price)
 real_price = scaler.inverse_transform(data)
 
+sum_percent = 0
+for i in range(100):
+    index = np.random.randint(len(data))
+    percent_diff = ((predicted_price[index]-real_price[index])/real_price[index]) * 100
+    sum_percent += percent_diff
+    print("Predicted Price: {} , Actual Price: {} , Percentage Diff: {}".format(predicted_price[index],real_price[index],percent_diff))
+print()
+print("Average Percentage Difference: {}".format(sum_percent/100))
+
 # Visualization as a graph
 plt.figure(figsize=(20,8))
 plt.plot(predicted_price,color="red",label="Predicted price")
