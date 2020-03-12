@@ -1,6 +1,4 @@
 import pandas as pd
-from keys import *
-from binance.client import Client
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import matplotlib.pyplot as plt
