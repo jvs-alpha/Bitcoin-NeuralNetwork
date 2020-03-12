@@ -4,14 +4,15 @@ from binance.client import Client
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import matplotlib.pyplot as plt
+import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import LSTM,Dense
 
 
 # This area is for reading the data and reshapeing as we need it
 BTC = pd.read_csv("data.csv",index_col=0)
-BTC["close"] = BTC["close"].astype("float")
-data = BTC.iloc[:,4].astype("float").values
+data = BTC["close"].astype("float").values
+#data = BTC.iloc[:,4].astype("float").values
 data = np.reshape(data,(len(data),1))  # we need two dimension array for the MinMaxScaler to work
 
 # This will normalize the data with the sigmoid method
@@ -34,6 +35,9 @@ y_test = test_set[1:len(test_set)]
 x_train = np.reshape(x_train,(len(x_train),1,x_train.shape[1]))
 x_test = np.reshape(x_test,(len(x_test),1,x_test.shape[1]))
 
+tf.keras.optimizers.Adam(learning_rate=0.002, beta_1=0.9, beta_2=0.999, epsilon=1e-07, amsgrad=False,name='Adam')
+
+
 
 # Creting the model
 model = Sequential()
@@ -43,7 +47,7 @@ model.add(Dense(1))
 model.compile(loss="mean_squared_error",optimizer="adam")
 
 # Training the model and prediction
-model.fit(x_train,y_train,epochs=100,batch_size=16,shuffle=False)
+model.fit(x_train,y_train,epochs=200,batch_size=16,shuffle=False)
 predicted_price = model.predict(x_test)
 predicted_price = scaler.inverse_transform(predicted_price)
 real_price = scaler.inverse_transform(y_test)
