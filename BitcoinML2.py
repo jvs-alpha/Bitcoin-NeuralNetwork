@@ -9,8 +9,7 @@ from keras.layers import LSTM,Dense
 
 # This area is for reading the data and reshapeing as we need it
 BTC = pd.read_csv("data.csv",index_col=0)
-data = BTC["close"].astype("float").values
-#data = BTC.iloc[:,4].astype("float").values
+data = BTC["high"].astype("float").values
 data = np.reshape(data,(len(data),1))  # we need two dimension array for the MinMaxScaler to work
 
 # This will normalize the data with the sigmoid method
@@ -45,7 +44,7 @@ model.add(Dense(1))
 model.compile(loss="mean_squared_error",optimizer="adam")
 
 # Training the model and prediction
-model.fit(x_train,y_train,epochs=200,batch_size=16,shuffle=False)
+model.fit(x_train,y_train,epochs=250,batch_size=16,shuffle=False)
 predicted_price = model.predict(x_test)
 predicted_price = scaler.inverse_transform(predicted_price)
 real_price = scaler.inverse_transform(y_test)
