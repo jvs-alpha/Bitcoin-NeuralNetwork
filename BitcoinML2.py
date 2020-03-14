@@ -32,7 +32,7 @@ y_test = test_set[1:len(test_set)]
 x_train = np.reshape(x_train,(len(x_train),1,x_train.shape[1]))
 x_test = np.reshape(x_test,(len(x_test),1,x_test.shape[1]))
 
-tf.keras.optimizers.Adam(learning_rate=0.002, beta_1=0.9, beta_2=0.999, epsilon=1e-07, amsgrad=False,name='Adam')
+tf.keras.optimizers.Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-07, amsgrad=False,name='Adam')
 
 
 

@@ -63,3 +63,7 @@ which means the data that we have here is in a broad range of data which is very
 Neural Network to process so we bring down the range of the data to a certain constraint range
 ideally in between 0 and 1. We are using the Scaleing function for converting the data
 to 0 to 1 range using the Sigmoid method
+
+### Tensorflow and Keras
+The Tensorflow is the mechine learning library that we are using for training or model
+the 
