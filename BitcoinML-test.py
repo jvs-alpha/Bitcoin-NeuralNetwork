@@ -8,6 +8,7 @@ import pandas as pd
 BTC = pd.read_csv("data.csv",index_col=0)
 BTC["close"] = BTC["close"].astype("float")
 data = BTC.iloc[:,4].astype("float").values
+data = data[1300:]
 data = np.reshape(data,(len(data),1))
 
 # Normalizing the data
@@ -28,7 +29,7 @@ for i in range(100):
     index = np.random.randint(len(data))
     percent_diff = ((predicted_price[index]-real_price[index])/real_price[index]) * 100
     sum_percent += percent_diff
-    print("Predicted Price: {} , Actual Price: {} , Percentage Diff: {}".format(predicted_price[index],real_price[index],percent_diff))
+    print("index: {} , Predicted Price: {} , Actual Price: {} , Percentage Diff: {}".format(index,predicted_price[index],real_price[index],percent_diff))
 print()
 print("Average Percentage Difference: {}".format(sum_percent/100))
 
